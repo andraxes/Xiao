@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import java.awt.*;
+
 public class Game extends ApplicationAdapter implements InputProcessor {
 	SpriteBatch batch;
 	SpriteBatch batchButton;
@@ -26,7 +28,6 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 	Texture tbuttonNinja;
 
     private OrthographicCamera camera;
-
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
@@ -67,8 +68,8 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 		batch.begin();
 		batch.draw(castle.getTexture(), castle.x, castle.y);
 
-		for (Soldier soldier : castle.getArraySoldier()) {
-			soldier.render(batch);
+		for (Unit unit : castle.getArrayUnit()) {
+			unit.render(batch);
 		}
 
 		batch.end();
@@ -91,8 +92,8 @@ public class Game extends ApplicationAdapter implements InputProcessor {
 		img.dispose();
 		batchButton.dispose();
 		tbuttonSoldier.dispose();
-		for (Soldier soldier : castle.getArraySoldier()) {
-		    soldier.dispose();
+		for (Unit unit : castle.getArrayUnit()) {
+		    unit.dispose();
         }
 	}
 

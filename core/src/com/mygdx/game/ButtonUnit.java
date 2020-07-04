@@ -19,7 +19,7 @@ public class ButtonUnit extends Rectangle {
     }
 
     public void clicked(Castle castle, String s) {
-        castle.createSoldier(s);
+        castle.createUnit(s);
     }
 
 

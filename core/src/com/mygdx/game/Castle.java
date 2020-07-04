@@ -9,34 +9,34 @@ import java.util.ArrayList;
 public class Castle extends Rectangle {
 
     private Texture texture;
-    private ArrayList<Soldier> arraySoldier;
+    private ArrayList<Unit> arrayUnit;
 
     public void setTexture(Texture texture) {
         this.texture = texture;
 
-        arraySoldier = new ArrayList<Soldier>();
+        arrayUnit = new ArrayList<>();
     }
 
     public Texture getTexture() {
         return this.texture;
     }
 
-    public void createSoldier(String s) {
+    public void createUnit(String s) {
         switch (s) {
             case "soldier": {
-                arraySoldier.add(new Soldier());
+                arrayUnit.add(new Soldier());
                 break;
             }
             case "ninja": {
-                arraySoldier.add(new Ninja());
+                arrayUnit.add(new Ninja());
                 break;
             }
         }
 
     }
 
-    public ArrayList<Soldier> getArraySoldier() {
-        return this.arraySoldier;
+    public ArrayList<Unit> getArrayUnit() {
+        return this.arrayUnit;
     }
 
 
